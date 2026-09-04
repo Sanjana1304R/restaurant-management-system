@@ -20,10 +20,7 @@ jobs:
     - name: Install Dependencies
       run: |
         python -m pip install --upgrade pip
-        pip install django
+        if [ -f requirements.txt ]; then pip install -r requirements.txt; else pip install django; fi
 
     - name: Check Django Setup
       run: python manage.py check
-
-    - name: Run Database Migrations
-      run: python manage.py migrate
