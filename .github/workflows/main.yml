@@ -24,3 +24,6 @@ jobs:
 
     - name: Check Django Setup
       run: python manage.py check
+
+    - name: Automated Unit Testing
+      run: python manage.py test
